@@ -64,3 +64,82 @@ talaba1.salomlash()
 # Salom, mening ismim Ali, men Kompyuter fanlari fakultetida o'qiyman
 
 print(talaba1.tugilgan_yil())   # 2006
+"""
+==================================================================
+        CLASS va OBJECT QANDAY TURLARGA BO'LINADI?
+==================================================================
+"""
+ 
+ 
+# ==================================================================
+#   1-QISM: ATRIBUTLAR (ATTRIBUTES) - 2 TURGA BO'LINADI
+# ==================================================================
+ 
+class Talaba:
+ 
+    # ---- a) CLASS ATRIBUT ----
+    # Barcha obyektlar uchun UMUMIY, klass ichida to'g'ridan-to'g'ri
+    # yoziladi, self orqali emas.
+    universitet = "TATU"
+ 
+    def __init__(self, ism):
+        # ---- b) INSTANCE ATRIBUT ----
+        # Har bir obyektga ALOHIDA tegishli, self orqali yaratiladi.
+        self.ism = ism
+ 
+ 
+# ==================================================================
+#   2-QISM: METODLAR (METHODS) - 3 TURGA BO'LINADI
+# ==================================================================
+ 
+class Namuna:
+ 
+    # ---- a) INSTANCE METHOD ----
+    # Eng ko'p ishlatiladigan tur. self qabul qiladi,
+    # obyekt orqali chaqiriladi.
+    def instance_metod(self):
+        print("Bu - instance method, obyekt orqali ishlaydi")
+ 
+    # ---- b) CLASS METHOD ----
+    # Klassning o'ziga tegishli. @classmethod bilan belgilanadi,
+    # self o'rniga cls oladi.
+    @classmethod
+    def class_metod(cls):
+        print("Bu - class method, klassning o'ziga tegishli")
+ 
+    # ---- c) STATIC METHOD ----
+    # Na obyektga, na klassga bog'liq emas.
+    # @staticmethod bilan belgilanadi.
+    @staticmethod
+    def static_metod():
+        print("Bu - static method, mustaqil ishlaydi")
+ 
+ 
+# ==================================================================
+#   3-QISM: OOP'NING 4 TA ASOSIY TAMOYILI
+# ==================================================================
+#
+#   1) ENCAPSULATION (Inkapsulyatsiya)
+#      -> Ma'lumotni yashirish, faqat metodlar orqali kirish
+#
+#   2) INHERITANCE (Meros olish)
+#      -> Bir klass boshqa klassdan xususiyat oladi
+#
+#   3) POLYMORPHISM (Ko'p shakllilik)
+#      -> Bir xil metod turli klasslarda boshqacha ishlashi
+#
+#   4) ABSTRACTION (Abstraksiya)
+#      -> Faqat kerakli qismini ko'rsatib, murakkablikni yashirish
+#
+# ==================================================================
+ 
+ 
+# ---------------- SINOV UCHUN CHAQIRUVLAR ----------------
+talaba1 = Talaba("Ali")
+print(talaba1.ism)           # Ali          -> instance atribut
+print(talaba1.universitet)   # TATU         -> class atribut
+ 
+obj = Namuna()
+obj.instance_metod()         # instance method chaqiruvi
+Namuna.class_metod()         # class method chaqiruvi
+Namuna.static_metod()        # static method chaqiruvi

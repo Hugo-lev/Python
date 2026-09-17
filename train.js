@@ -1,19 +1,39 @@
+//f task
 function findDoublers(str) {
-  const seen = new Set();
-  for (const ch of str) {
-    if (seen.has(ch)) {
-      return true; // Agar harf takrorlansa
+  // Harflarni saqlash uchun Set ishlatamiz
+  let seen = new Set();
+
+  for (let char of str) {
+    if (seen.has(char)) {
+      return true; // Agar oldin uchragan bo‘lsa, true qaytadi
     }
-    seen.add(ch);
+    seen.add(char);
   }
-  return false; // Hech bir harf takrorlanmasa
+
+  return false; // Agar hech qaysi harf takrorlanmasa, false qaytadi
 }
 
 // Misollar:
-console.log(findDoublers("hello")); // true
-console.log(findDoublers("world")); // false
-console.log(findDoublers("java")); // true
-console.log(findDoublers("python")); // false
+console.log(findDoublers("hello"));
+console.log(findDoublers("world"));
+console.log(findDoublers("abcdea"));
+
+// function findDoublers(str) {
+//   const seen = new Set();
+//   for (const ch of str) {
+//     if (seen.has(ch)) {
+//       return true; // Agar harf takrorlansa
+//     }
+//     seen.add(ch);
+//   }
+//   return false; // Hech bir harf takrorlanmasa
+// }
+
+// // Misollar:
+// console.log(findDoublers("hello")); // true
+// console.log(findDoublers("world")); // false
+// console.log(findDoublers("java")); // true
+// console.log(findDoublers("python")); // false
 
 //f task
 // function getHighestIndex(arr) {
